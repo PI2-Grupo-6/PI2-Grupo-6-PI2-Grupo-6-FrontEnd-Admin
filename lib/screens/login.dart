@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
               child: TextField(
                 controller: _usernameController,
                 decoration: InputDecoration(
-                  labelText: 'Username',
+                  labelText: 'Email',
                 ),
               ),
             ),
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
               child: TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
-                  labelText: 'Password',
+                  labelText: 'Senha',
                 ),
                 obscureText: true,
               ),
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
             ButtonBar(
               children: <Widget>[
                 FlatButton(
-                  child: Text('CANCEL'),
+                  child: Text('Esqueceu a senha ?'),
                   shape: BeveledRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(7.0)),
                   ),

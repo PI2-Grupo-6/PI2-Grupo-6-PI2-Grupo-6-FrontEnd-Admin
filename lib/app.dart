@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'utils/constants.dart';
-import 'screens/home.dart';
 import 'screens/login.dart';
 import 'utils/cut_corners_border.dart';
 
@@ -15,24 +14,14 @@ class _RapidaoAppState extends State<RapidaoApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Rapidao',
-      home: HomePage(),
+      home: LoginPage(),
       initialRoute: '/login',
-      onGenerateRoute: _getRoute,
+      routes: {
+        '/login': (BuildContext context) => LoginPage(),
+      },
       theme: _kRapidaoTheme,
     );
   }
-}
-
-Route<dynamic> _getRoute(RouteSettings settings) {
-  if (settings.name != '/login') {
-    return null;
-  }
-
-  return MaterialPageRoute<void>(
-    settings: settings,
-    builder: (BuildContext context) => LoginPage(),
-    fullscreenDialog: true,
-  );
 }
 
 final ThemeData _kRapidaoTheme = _buildRapidaoTheme();
@@ -44,16 +33,15 @@ IconThemeData _customIconTheme(IconThemeData original) {
 ThemeData _buildRapidaoTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
-    accentColor: kRapidaoBrown900,
-    primaryColor: kRapidaoPink100,
+    accentColor: kSecondaryColor,
+    primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: kRapidaoBackgroundWhite,
     cardColor: kRapidaoBackgroundWhite,
-    textSelectionColor: kRapidaoPink100,
     errorColor: kRapidaoErrorRed,
     buttonTheme: base.buttonTheme.copyWith(
-      buttonColor: kRapidaoPink100,
+      buttonColor: kPrimaryColor,
       colorScheme: base.colorScheme.copyWith(
-        secondary: kRapidaoBrown900,
+        secondary: kSecondaryColor,
       ),
     ),
     buttonBarTheme: base.buttonBarTheme.copyWith(
@@ -87,7 +75,7 @@ TextTheme _buildRapidaoTextTheme(TextTheme base) {
       fontSize: 16.0,
     ),
   ).apply(
-    fontFamily: 'Rubik',
+    fontFamily: 'Roboto',
     displayColor: kRapidaoBrown900,
     bodyColor: kRapidaoBrown900,
   );
