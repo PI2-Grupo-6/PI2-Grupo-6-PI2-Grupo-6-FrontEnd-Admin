@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
+import 'screens/machines.dart';
 import 'utils/constants.dart';
 import 'screens/login.dart';
 import 'utils/cut_corners_border.dart';
 
-class RapidaoApp extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
   _RapidaoAppState createState() => _RapidaoAppState();
 }
 
-class _RapidaoAppState extends State<RapidaoApp> {
+class _RapidaoAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,6 +19,7 @@ class _RapidaoAppState extends State<RapidaoApp> {
       initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => LoginPage(),
+        '/machines': (BuildContext context) => MachinePage(),
       },
       theme: _kRapidaoTheme,
     );
@@ -42,7 +44,6 @@ ThemeData _buildRapidaoTheme() {
       style: ElevatedButton.styleFrom(
         primary: kPrimaryColor,
         onPrimary: kSecondaryColor,
-
       ),
     ),
     buttonTheme: base.buttonTheme.copyWith(

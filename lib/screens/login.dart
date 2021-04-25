@@ -79,7 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                         child: Text('Entrar'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/machines');
+                        },
                       ),
                     ),
                   ),
