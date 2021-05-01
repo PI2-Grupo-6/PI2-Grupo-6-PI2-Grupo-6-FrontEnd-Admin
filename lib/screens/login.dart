@@ -14,7 +14,12 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Code'),
+        title:  Image.asset(
+                    'images/LogoAmarela.png',
+                    height: 67,
+                    width: 155,
+                    fit: BoxFit.fill,
+                  ), 
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                         child: Text('Entrar'),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/machines');
+                          Navigator.pushNamed(context, '/restaurants');
                         },
                       ),
                     ),

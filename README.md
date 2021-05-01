@@ -9,5 +9,6 @@ flutter upgrade
 flutter config --enable-web
 flutter doctor
 echo "export CHROME_EXECUTABLE=\"$(which chromium-browser)\"" >> ~/.bashrc
+export CHROME_EXECUTABLE=/opt/google/chrome/chrome
 flutter run -d chrome
 ```

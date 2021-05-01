@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/restaurants.dart';
 
 import 'screens/machines.dart';
 import 'utils/constants.dart';
@@ -20,6 +21,7 @@ class _RapidaoAppState extends State<MyApp> {
       routes: {
         '/login': (BuildContext context) => LoginPage(),
         '/machines': (BuildContext context) => MachinePage(),
+        '/restaurants': (BuildContext context) => RestaurantPage(),
       },
       theme: _kRapidaoTheme,
     );
