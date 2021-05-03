@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/screens/restaurants.dart';
 
+import 'screens/machine.dart';
 import 'screens/machines.dart';
+import 'screens/restaurant.dart';
+import 'screens/restaurants.dart';
 import 'utils/constants.dart';
 import 'screens/login.dart';
 import 'utils/cut_corners_border.dart';
@@ -20,8 +23,10 @@ class _RapidaoAppState extends State<MyApp> {
       initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => LoginPage(),
-        '/machines': (BuildContext context) => MachinePage(),
-        '/restaurants': (BuildContext context) => RestaurantPage(),
+        '/machines': (BuildContext context) => MachinesPage(),
+        '/restaurants': (BuildContext context) => RestaurantsPage(),
+        '/new/restaurant': (BuildContext context) => RestaurantPage(),
+        '/new/machine': (BuildContext context) => MachinePage(),
       },
       theme: _kRapidaoTheme,
     );

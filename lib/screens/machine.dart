@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/machines_repository.dart';
+import 'package:food_app/utils/constants.dart';
+import 'package:food_app/widgets/machine_card.dart';
 
-class MachinesPage extends StatefulWidget {
+class MachinePage extends StatefulWidget {
   @override
-  _MachinesPageState createState() => _MachinesPageState();
+  _MachinePageState createState() => _MachinePageState();
 }
 
-class _MachinesPageState extends State<MachinesPage> {
+class _MachinePageState extends State<MachinePage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -54,7 +56,7 @@ class _MachinesPageState extends State<MachinesPage> {
                   SizedBox(height: 30),
                   TextButton(
                       child: Text('Adicionar máquina'),
-                      onPressed: () {Navigator.pushNamed(context, '/new/machine');},
+                      onPressed: () {/* vai pra pagina do esqueceu a senha */},
                     ),
                 ])))));
   }
