@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SwitchElem extends StatefulWidget {
+  bool status;
+  SwitchElem(this.status);
+
   @override
   _State createState() => _State();
 }
@@ -11,11 +14,10 @@ class _State extends State<SwitchElem> {
   @override
   Widget build(BuildContext context) {
     return Switch(
-      value: isSwitched,
+      value: widget.status,
       onChanged: (value) {
         setState(() {
-          isSwitched = value;
-          print(isSwitched);
+          widget.status = value;
         });
       },
       activeTrackColor: Colors.yellow,

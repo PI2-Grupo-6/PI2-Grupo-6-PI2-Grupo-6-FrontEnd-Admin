@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/restaurants_repository.dart';
 
-class RestaurantsPage extends StatefulWidget {
+class RestaurantPage extends StatefulWidget {
   @override
-  _RestaurantsPageState createState() => _RestaurantsPageState();
+  _RestaurantPageState createState() => _RestaurantPageState();
 }
 
-class _RestaurantsPageState extends State<RestaurantsPage> {
+class _RestaurantPageState extends State<RestaurantPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -56,7 +56,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                     SizedBox(height: 30),
                     TextButton(
                       child: Text('Adicionar restaurante'),
-                      onPressed: () {Navigator.pushNamed(context, '/new/restaurant');},
+                      onPressed: () {/* vai pra pagina do esqueceu a senha */},
                     ),
                   ],
                 )))));
