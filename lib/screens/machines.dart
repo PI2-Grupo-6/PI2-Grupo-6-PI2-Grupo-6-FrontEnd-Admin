@@ -19,43 +19,45 @@ class _MachinesPageState extends State<MachinesPage> {
         ),
         body: Center(
             child: Container(
-            padding: EdgeInsets.all(30),
-            child: SingleChildScrollView(
-                child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                  Text(
-                    "Bem vindo a tela de seleção de máquinas.",
-                    style: Theme.of(context).textTheme.headline5,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    "Na máquina que desejar, clique em editar, visualizar ou ativar/desativar",
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                  SizedBox(height: 30),
-                  SizedBox(
-                    width: itemWidth,
-                    child: PaginatedDataTable(
-                      showCheckboxColumn: false,
-                      rowsPerPage: 4,
-                      columns: [
-                        DataColumn(label: Text('Máquina')),
-                        DataColumn(label: Text('Local da máquina')),
-                        DataColumn(label: Text('Status')),
-                        DataColumn(label: Text('Editar')),
-                        DataColumn(label: Text('Visualizar')),
-                        DataColumn(label: Text('Ativar')),
-                      ],
-                      source: MachineRepository(context),
-                    ),
-                  ),
-                  SizedBox(height: 30),
-                  TextButton(
-                      child: Text('Adicionar máquina'),
-                      onPressed: () {Navigator.pushNamed(context, '/new/machine');},
-                    ),
-                ])))));
+                padding: EdgeInsets.all(30),
+                child: SingleChildScrollView(
+                    child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                      Text(
+                        "Bem vindo a tela de seleção de máquinas.",
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Na máquina que desejar, clique em editar, visualizar ou ativar/desativar",
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                      SizedBox(height: 30),
+                      SizedBox(
+                        width: itemWidth,
+                        child: PaginatedDataTable(
+                          showCheckboxColumn: false,
+                          rowsPerPage: 4,
+                          columns: [
+                            DataColumn(label: Text('Máquina')),
+                            DataColumn(label: Text('Local da máquina')),
+                            DataColumn(label: Text('Status')),
+                            DataColumn(label: Text('Editar')),
+                            DataColumn(label: Text('Visualizar')),
+                            DataColumn(label: Text('Ativar')),
+                          ],
+                          source: MachineRepository(context),
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      TextButton(
+                        child: Text('Adicionar máquina'),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/new/machine');
+                        },
+                      ),
+                    ])))));
   }
 }

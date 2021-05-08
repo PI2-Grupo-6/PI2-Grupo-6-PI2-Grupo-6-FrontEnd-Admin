@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/machines.dart';
+import 'package:food_app/widgets/switch.dart';
 
 class MachineRepository extends DataTableSource {
   MachineRepository(this.context) {
@@ -29,12 +30,7 @@ class MachineRepository extends DataTableSource {
         DataCell(Text(row.status == true ? 'Ativada' : 'Desativada')),
         DataCell(Icon(Icons.edit)),
         DataCell(Icon(Icons.visibility)),
-        DataCell(Switch(
-            value: row.status,
-            activeColor: Color(0xFF6200EE),
-            onChanged: (value) {
-              row.status = value;
-            }))
+        DataCell(SwitchElem(row.status))
       ],
     );
   }
