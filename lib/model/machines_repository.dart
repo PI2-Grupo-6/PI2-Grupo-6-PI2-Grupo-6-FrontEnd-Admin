@@ -28,7 +28,15 @@ class MachineRepository extends DataTableSource {
         DataCell(Text(row.name)),
         DataCell(Text(row.local)),
         DataCell(Text(row.status == true ? 'Ativada' : 'Desativada')),
-        DataCell(Icon(Icons.edit)),
+        DataCell(
+          IconButton(
+            icon: const Icon(Icons.edit),
+            tooltip: 'Edit',
+            onPressed: () {
+              Navigator.pushNamed(context, '/edit/machine');
+            },
+          ),
+        ),
         DataCell(Icon(Icons.visibility)),
         DataCell(SwitchElem(row.status))
       ],
