@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/model/machines_repository.dart';
 import 'package:food_app/utils/constants.dart';
 import 'package:food_app/widgets/machine_card.dart';
 
@@ -12,13 +13,14 @@ class _MachinePageState extends State<MachinePage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     final double itemHeight = (size.height - kToolbarHeight) / 2;
-    final double itemWidth = size.width / 2;
+    final double itemWidth = size.width / 1.5;
 
     return Scaffold(
         appBar: AppBar(
           title: const Text('Sample Code'),
         ),
-        body: Container(
+        body: Center(
+            child: Container(
             padding: EdgeInsets.all(30),
             child: SingleChildScrollView(
                 child: Column(
@@ -35,19 +37,27 @@ class _MachinePageState extends State<MachinePage> {
                     style: Theme.of(context).textTheme.headline6,
                   ),
                   SizedBox(height: 30),
-                  GridView.count(
-                    crossAxisCount: 2,
-                    physics: ScrollPhysics(),
-                    childAspectRatio: (itemWidth / itemHeight),
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    children: List.generate(
-                      5,
-                      (index) {
-                        return MachineCard();
-                      },
+                  SizedBox(
+                    width: itemWidth,
+                    child: PaginatedDataTable(
+                      showCheckboxColumn: false,
+                      rowsPerPage: 4,
+                      columns: [
+                        DataColumn(label: Text('Máquina')),
+                        DataColumn(label: Text('Local da máquina')),
+                        DataColumn(label: Text('Status')),
+                        DataColumn(label: Text('Editar')),
+                        DataColumn(label: Text('Visualizar')),
+                        DataColumn(label: Text('Ativar')),
+                      ],
+                      source: MachineRepository(context),
                     ),
                   ),
-                ]))));
+                  SizedBox(height: 30),
+                  TextButton(
+                      child: Text('Adicionar máquina'),
+                      onPressed: () {/* vai pra pagina do esqueceu a senha */},
+                    ),
+                ])))));
   }
 }

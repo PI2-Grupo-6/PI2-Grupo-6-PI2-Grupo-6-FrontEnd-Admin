@@ -53,10 +53,13 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         ],
                         source: RestaurantRepository(context),
                       ),
-                    )
+                    ),
+                    SizedBox(height: 30),
+                    TextButton(
+                      child: Text('Adicionar restaurante'),
+                      onPressed: () {/* vai pra pagina do esqueceu a senha */},
+                    ),
                   ],
                 )))));
   }
 }
-
-
