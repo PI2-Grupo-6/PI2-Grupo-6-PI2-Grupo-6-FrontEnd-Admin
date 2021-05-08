@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/model/restaurants_repository.dart';
+import 'package:food_app/utils/constants.dart';
+
+import 'login.dart';
 
 class RestaurantPage extends StatefulWidget {
   @override
@@ -9,56 +11,81 @@ class RestaurantPage extends StatefulWidget {
 class _RestaurantPageState extends State<RestaurantPage> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    final double itemHeight = (size.height - kToolbarHeight) / 2;
-    final double itemWidth = size.width / 2;
+    final _machineNameController = TextEditingController();
+    final _machineLocalController = TextEditingController();
     return Scaffold(
-        appBar: AppBar(
-          title: Image.asset(
-            'images/LogoAmarela.png',
-            height: 67,
-            width: 155,
-            fit: BoxFit.fill,
-          ),
+      appBar: AppBar(
+        title: Image.asset(
+          'images/LogoAmarela.png',
+          height: 67,
+          width: 155,
+          fit: BoxFit.fill,
         ),
-        body: Center(
-            child: Container(
-                padding: EdgeInsets.all(30),
-                child: SingleChildScrollView(
-                    child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+      ),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(30),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Bem vindo a tela de seleção de restaurante.",
-                      style: Theme.of(context).textTheme.headline5,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Selecone o restauante que deseja ou adicione um novo.",
+                      "Adicione um novo restaurante",
                       style: Theme.of(context).textTheme.headline6,
+                      textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 30),
-                    SizedBox(
-                      width: itemWidth,
-                      child: PaginatedDataTable(
-                        showCheckboxColumn: false,
-                        rowsPerPage: 4,
-                        columns: [
-                          DataColumn(label: Text('Restaurante')),
-                          DataColumn(label: Text('Local do Restaurante')),
-                          DataColumn(label: Text('Num de máquinas')),
-                          DataColumn(label: Text('Visualizar')),
-                        ],
-                        source: RestaurantRepository(context),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      height: 110,
+                      width: double.maxFinite,
+                      child: Card(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Expanded(
+                              child: AccentColorOverride(
+                                color: kRapidaoBrown900,
+                                child: TextField(
+                                  controller: _machineNameController,
+                                  decoration: InputDecoration(
+                                    labelText: 'Nome da máquina',
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 30),
+                            Expanded(
+                              child: AccentColorOverride(
+                                color: kRapidaoBrown900,
+                                child: TextField(
+                                  controller: _machineLocalController,
+                                  decoration: InputDecoration(
+                                    labelText: 'Local da máquina',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(height: 30),
-                    TextButton(
-                      child: Text('Adicionar restaurante'),
-                      onPressed: () {/* vai pra pagina do esqueceu a senha */},
+                    ElevatedButton(
+                      child: Text('Salvar'),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/restaurants');
+                      },
                     ),
-                  ],
-                )))));
+                  ])
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
