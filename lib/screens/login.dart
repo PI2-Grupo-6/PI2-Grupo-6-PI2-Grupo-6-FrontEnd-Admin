@@ -13,72 +13,99 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
-          children: <Widget>[
-            SizedBox(height: 80.0),
-            Column(
-              children: <Widget>[
-                Image.asset('images/rapidao.png',
-                  height: 96,
-                  width: 96,
-                  fit: BoxFit.fill,
-                ),
-                SizedBox(height: 16.0),
-                Text(
-                  'Rapidao',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              ],
-            ),
-            SizedBox(height: 120.0),
-            AccentColorOverride(
-              color: kRapidaoBrown900,
-              child: TextField(
-                controller: _usernameController,
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                ),
+      appBar: AppBar(
+        title:  Image.asset(
+                    'images/LogoAmarela.png',
+                    height: 67,
+                    width: 155,
+                    fit: BoxFit.fill,
+                  ), 
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+                MediaQuery.of(context).size.width * 0.20,
+                0,
+                MediaQuery.of(context).size.width * 0.20,
+                0),
+            child: Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Image.asset(
+                    'images/rapidao.png',
+                    height: 96,
+                    width: 96,
+                    fit: BoxFit.fill,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(
+                        MediaQuery.of(context).size.width * 0.15,
+                        10,
+                        MediaQuery.of(context).size.width * 0.15,
+                        10),
+                    child: AccentColorOverride(
+                      color: kRapidaoBrown900,
+                      child: TextField(
+                        controller: _usernameController,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(
+                        MediaQuery.of(context).size.width * 0.15,
+                        10,
+                        MediaQuery.of(context).size.width * 0.15,
+                        10),
+                    child: AccentColorOverride(
+                      color: kRapidaoBrown900,
+                      child: TextField(
+                        controller: _passwordController,
+                        decoration: InputDecoration(
+                          labelText: 'Senha',
+                        ),
+                        obscureText: true,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(
+                        MediaQuery.of(context).size.width * 0.15,
+                        10,
+                        MediaQuery.of(context).size.width * 0.15,
+                        10),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        child: Text('Entrar'),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/restaurants');
+                        },
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(
+                        MediaQuery.of(context).size.width * 0.15,
+                        10,
+                        MediaQuery.of(context).size.width * 0.15,
+                        10),
+                    child: TextButton(
+                      child: Text('Esqueceu a senha ?'),
+                      onPressed: () {/* vai pra pagina do esqueceu a senha */},
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 12.0),
-            AccentColorOverride(
-              color: kRapidaoBrown900,
-              child: TextField(
-                controller: _passwordController,
-                decoration: InputDecoration(
-                  labelText: 'Senha',
-                ),
-                obscureText: true,
-              ),
-            ),
-            ButtonBar(
-              children: <Widget>[
-                FlatButton(
-                  child: Text('Esqueceu a senha ?'),
-                  shape: BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
-                  ),
-                  onPressed: () {
-                    _usernameController.clear();
-                    _passwordController.clear();
-                  },
-                ),
-                RaisedButton(
-                  child: Text('NEXT'),
-                  elevation: 8.0,
-                  shape: BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
