@@ -18,7 +18,7 @@ class _MachinePageEditState extends State<MachineEditPage> {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          'images/LogoAmarela.png',
+          'assets/images/LogoAmarela.png',
           height: 67,
           width: 155,
           fit: BoxFit.fill,
@@ -36,7 +36,7 @@ class _MachinePageEditState extends State<MachineEditPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Máquina1",
+                      "Máquina 1",
                       style: Theme.of(context).textTheme.headline6,
                       textAlign: TextAlign.start,
                     ),

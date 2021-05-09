@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title:  Image.asset(
-                    'images/LogoAmarela.png',
+                    'assets/images/LogoAmarela.png',
                     height: 67,
                     width: 155,
                     fit: BoxFit.fill,
@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Image.asset(
-                    'images/rapidao.png',
+                    'assets/images/rapidao.png',
                     height: 96,
                     width: 96,
                     fit: BoxFit.fill,
