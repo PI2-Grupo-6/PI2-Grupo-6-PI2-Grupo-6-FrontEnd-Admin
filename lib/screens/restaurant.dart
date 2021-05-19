@@ -16,7 +16,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          'images/LogoAmarela.png',
+          'assets/images/LogoAmarela.png',
           height: 67,
           width: 155,
           fit: BoxFit.fill,

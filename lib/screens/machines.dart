@@ -10,12 +10,16 @@ class _MachinesPageState extends State<MachinesPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final double itemHeight = (size.height - kToolbarHeight) / 2;
     final double itemWidth = size.width / 1.5;
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Sample Code'),
+          title: Image.asset(
+            'assets/images/LogoAmarela.png',
+            height: 67,
+            width: 155,
+            fit: BoxFit.fill,
+          ),
         ),
         body: Center(
             child: Container(
@@ -46,13 +50,12 @@ class _MachinesPageState extends State<MachinesPage> {
                             DataColumn(label: Text('Status')),
                             DataColumn(label: Text('Editar')),
                             DataColumn(label: Text('Visualizar')),
-                            DataColumn(label: Text('Ativar')),
                           ],
                           source: MachineRepository(context),
                         ),
                       ),
                       SizedBox(height: 30),
-                      TextButton(
+                      ElevatedButton(
                         child: Text('Adicionar máquina'),
                         onPressed: () {
                           Navigator.pushNamed(context, '/new/machine');

@@ -9,13 +9,14 @@ class RestaurantsPage extends StatefulWidget {
 class _RestaurantsPageState extends State<RestaurantsPage> {
   @override
   Widget build(BuildContext context) {
+    
     var size = MediaQuery.of(context).size;
-    final double itemHeight = (size.height - kToolbarHeight) / 2;
     final double itemWidth = size.width / 2;
+
     return Scaffold(
         appBar: AppBar(
           title: Image.asset(
-            'images/LogoAmarela.png',
+            'assets/images/LogoAmarela.png',
             height: 67,
             width: 155,
             fit: BoxFit.fill,
@@ -54,7 +55,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                       ),
                     ),
                     SizedBox(height: 30),
-                    TextButton(
+                    ElevatedButton(
                       child: Text('Adicionar restaurante'),
                       onPressed: () {Navigator.pushNamed(context, '/new/restaurant');},
                     ),

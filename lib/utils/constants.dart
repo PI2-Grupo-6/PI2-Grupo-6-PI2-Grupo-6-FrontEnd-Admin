@@ -6,6 +6,7 @@ const kTextColor = Color(0xFF1D150B);
 const kPrimaryColor = Color(0xFFFAD733);
 const kSecondaryColor = Color(0xFFF42125);
 const kBorderColor = Color(0xFFDDDDDD);
+const kGreenColor = Color(0xFF2ECC71);
 
 const kRapidaoPink50 = Color(0xFFFEEAE6);
 const kRapidaoPink100 = Color(0xFFFEDBD0);

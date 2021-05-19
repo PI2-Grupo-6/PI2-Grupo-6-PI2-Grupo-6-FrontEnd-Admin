@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/machines.dart';
+import 'package:food_app/utils/constants.dart';
 import 'package:food_app/widgets/switch.dart';
 
 class MachineRepository extends DataTableSource {
@@ -30,15 +31,14 @@ class MachineRepository extends DataTableSource {
         DataCell(Text(row.status == true ? 'Ativada' : 'Desativada')),
         DataCell(
           IconButton(
-            icon: const Icon(Icons.edit),
+            icon: const Icon(Icons.edit, color: kGreenColor),
             tooltip: 'Edit',
             onPressed: () {
               Navigator.pushNamed(context, '/edit/machine');
             },
           ),
         ),
-        DataCell(Icon(Icons.visibility)),
-        DataCell(SwitchElem(row.status))
+        DataCell(Icon(Icons.visibility, color: kGreenColor))
       ],
     );
   }

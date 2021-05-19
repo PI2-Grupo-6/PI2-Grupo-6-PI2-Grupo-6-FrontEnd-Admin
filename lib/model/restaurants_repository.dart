@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/restaurants.dart';
+import 'package:food_app/utils/constants.dart';
 
 class RestaurantRepository extends DataTableSource {
   RestaurantRepository(this.context) {
@@ -32,7 +33,7 @@ class RestaurantRepository extends DataTableSource {
         DataCell(Text(row.name)),
         DataCell(Text(row.local)),
         DataCell(Text(row.machineNumber.toString())),
-        DataCell(Icon(Icons.visibility_outlined)),
+        DataCell(Icon(Icons.visibility, color: kGreenColor)),
       ],
     );
   }

@@ -17,7 +17,7 @@ class _MachinePageState extends State<MachinePage> {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          'images/LogoAmarela.png',
+          'assets/images/LogoAmarela.png',
           height: 67,
           width: 155,
           fit: BoxFit.fill,
