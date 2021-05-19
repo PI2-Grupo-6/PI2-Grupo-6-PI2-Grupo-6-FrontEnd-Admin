@@ -4,10 +4,9 @@ import 'package:food_app/model/restaurants.dart';
 class RestaurantRepository extends DataTableSource {
   RestaurantRepository(this.context) {
     _rows = <Restaurant>[
-      Restaurant(name: ' Ru Gama', local: 'Gama-DF', machineNumber: 3),
+      Restaurant(name: 'Ru Gama', local: 'Gama-DF', machineNumber: 3),
       Restaurant(name: 'Ru Darcy', local: 'Brasília-DF', machineNumber: 4),
-      Restaurant(
-          name: 'Ru Planaltina', local: 'Planaltina-DF', machineNumber: 2),
+      Restaurant(name: 'Ru Planaltina', local: 'Planaltina-DF', machineNumber: 2),
       Restaurant(name: 'Ru Ceilandia', local: 'Ceilandia-DF', machineNumber: 2),
     ];
   }

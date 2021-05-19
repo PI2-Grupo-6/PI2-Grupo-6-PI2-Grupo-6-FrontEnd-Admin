@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/utils/constants.dart';
+import 'package:food_app/widgets/appBar.dart';
 
 import 'login.dart';
 
@@ -14,14 +15,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
     final _machineNameController = TextEditingController();
     final _machineLocalController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(
-        title: Image.asset(
-          'images/LogoAmarela.png',
-          height: 67,
-          width: 155,
-          fit: BoxFit.fill,
-        ),
-      ),
+      appBar: CustomAppBar('Novo Restaurante'),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(30),

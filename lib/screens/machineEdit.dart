@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/utils/constants.dart';
 import 'package:food_app/widgets/machineCard.dart';
+import 'package:food_app/widgets/appBar.dart';
 
 class MachineEditPage extends StatefulWidget {
   @override
@@ -16,14 +17,7 @@ class _MachinePageEditState extends State<MachineEditPage> {
     final double itemWidth = size.width / 1.5;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Image.asset(
-          'images/LogoAmarela.png',
-          height: 67,
-          width: 155,
-          fit: BoxFit.fill,
-        ),
-      ),
+      appBar: CustomAppBar('Editar Máquina'),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(30),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/utils/constants.dart';
+import 'package:food_app/widgets/appBar.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -13,14 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title:  Image.asset(
-                    'images/LogoAmarela.png',
-                    height: 67,
-                    width: 155,
-                    fit: BoxFit.fill,
-                  ), 
-      ),
+      appBar: CustomAppBar('Login'),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,

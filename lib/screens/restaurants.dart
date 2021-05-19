@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/restaurants_repository.dart';
+import 'package:food_app/widgets/appBar.dart';
 
 class RestaurantsPage extends StatefulWidget {
   @override
@@ -13,14 +14,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
     final double itemHeight = (size.height - kToolbarHeight) / 2;
     final double itemWidth = size.width / 2;
     return Scaffold(
-        appBar: AppBar(
-          title: Image.asset(
-            'images/LogoAmarela.png',
-            height: 67,
-            width: 155,
-            fit: BoxFit.fill,
-          ),
-        ),
+        appBar: CustomAppBar('Restaurants'),
         body: Center(
             child: Container(
                 padding: EdgeInsets.all(30),
@@ -35,7 +29,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "Selecone o restauante que deseja ou adicione um novo.",
+                      "Selecione o restaurante que deseja, ou, adicione um novo.",
                       style: Theme.of(context).textTheme.headline6,
                     ),
                     SizedBox(height: 30),
@@ -45,10 +39,10 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                         showCheckboxColumn: false,
                         rowsPerPage: 4,
                         columns: [
-                          DataColumn(label: Text('Restaurante')),
-                          DataColumn(label: Text('Local do Restaurante')),
-                          DataColumn(label: Text('Num de máquinas')),
-                          DataColumn(label: Text('Visualizar')),
+                          DataColumn(label: Text('Restaurante', style: Theme.of(context).textTheme.headline6)),
+                          DataColumn(label: Text('Local do Restaurante', style: Theme.of(context).textTheme.headline6)),
+                          DataColumn(label: Text('Num de máquinas', style: Theme.of(context).textTheme.headline6)),
+                          DataColumn(label: Text('Visualizar', style: Theme.of(context).textTheme.headline6)),
                         ],
                         source: RestaurantRepository(context),
                       ),

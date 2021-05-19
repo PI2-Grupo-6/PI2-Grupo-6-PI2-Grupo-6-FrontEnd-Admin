@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/machines_repository.dart';
+import 'package:food_app/widgets/appBar.dart';
 
 class MachinesPage extends StatefulWidget {
   @override
@@ -14,9 +15,7 @@ class _MachinesPageState extends State<MachinesPage> {
     final double itemWidth = size.width / 1.5;
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Sample Code'),
-        ),
+        appBar: CustomAppBar('Máquinas'),
         body: Center(
             child: Container(
                 padding: EdgeInsets.all(30),
@@ -41,12 +40,12 @@ class _MachinesPageState extends State<MachinesPage> {
                           showCheckboxColumn: false,
                           rowsPerPage: 4,
                           columns: [
-                            DataColumn(label: Text('Máquina')),
-                            DataColumn(label: Text('Local da máquina')),
-                            DataColumn(label: Text('Status')),
-                            DataColumn(label: Text('Editar')),
-                            DataColumn(label: Text('Visualizar')),
-                            DataColumn(label: Text('Ativar')),
+                            DataColumn(label: Text('Máquina', style: Theme.of(context).textTheme.headline6)),
+                            DataColumn(label: Text('Local da máquina', style: Theme.of(context).textTheme.headline6)),
+                            DataColumn(label: Text('Status', style: Theme.of(context).textTheme.headline6)),
+                            DataColumn(label: Text('Editar', style: Theme.of(context).textTheme.headline6)),
+                            DataColumn(label: Text('Visualizar', style: Theme.of(context).textTheme.headline6)),
+                            DataColumn(label: Text('Ativar', style: Theme.of(context).textTheme.headline6)),
                           ],
                           source: MachineRepository(context),
                         ),
