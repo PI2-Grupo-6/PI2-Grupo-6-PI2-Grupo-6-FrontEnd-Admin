@@ -2,6 +2,11 @@
 
 Esse repositório abrange a solução frontend da parte de administrador do projeto Rapidão 
 
+
+# Link Protótipo do figma
+
+- [Protótipo do figma](https://www.figma.com/proto/bJqOhT34LFld1FHS8quWsq/Ru-Rapid%C3%A3o?node-id=78%3A3&scaling=min-zoom&page-id=49%3A407)
+
 ## Instruções
 
 Para executar a aplicação
