@@ -24,5 +24,12 @@ flutter config --enable-web
 flutter doctor
 echo "export CHROME_EXECUTABLE=\"$(which chromium-browser)\"" >> ~/.bashrc
 export CHROME_EXECUTABLE=/opt/google/chrome/chrome
+```
+
+3. Execute a aplicação. Para rodar na web, use o seguinte comando
+
+```
 flutter run -d chrome
 ```
+
+Caso queira rodar em outra plataforma, troque `chrome` pela plataforma desejada (`android`, `ios`, `linux`, `macos`, `windows`)
